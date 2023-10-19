@@ -2,17 +2,22 @@ import{ useState } from "react";
 function App() {
 
   const [result, setResult] = useState(0);
+  const [change, setChange] = useState(1);
   
   function addOne() {
-    setResult(result + 1)
+    setResult(result + parseInt(change))
   }
   function removeOne() {
-    setResult(result - 1)
+    setResult(result - parseInt(change))
+  }
+  function handleChange(event){
+    setChange(event.target.value);
   }
   return (
     <div className="App">
-      <button onClick={addOne}>+1</button>
-      <button onClick={removeOne}>-1</button>
+      <input type="number" value={change} onChange={handleChange}></input>
+      <button onClick={addOne}>+{change}</button>
+      <button onClick={removeOne}>-{change}</button>
       <h1>{result}</h1>
     </div>
   );
