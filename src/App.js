@@ -1,26 +1,17 @@
-import{ useState } from "react";
+import Counter from "./Counter.js";
+import Hello from "./Hello.js";
 function App() {
-
-  const [result, setResult] = useState(0);
-  const [change, setChange] = useState(1);
+  const helloNames = ["Railijs","Jekabs","Oskars"];
   
-  function addOne() {
-    setResult(result + parseInt(change))
+  const namesJSX = helloNames.map((name,index) =>{
+    return  <><Hello name={name}/></>
+    })
+  
+    return (
+    <>
+    <Counter></Counter>
+    {namesJSX}
+    </>
+  )
   }
-  function removeOne() {
-    setResult(result - parseInt(change))
-  }
-  function handleChange(event){
-    setChange(event.target.value);
-  }
-  return (
-    <div className="App">
-      <input type="number" value={change} onChange={handleChange}></input>
-      <button onClick={addOne}>+{change}</button>
-      <button onClick={removeOne}>-{change}</button>
-      <h1>{result}</h1>
-    </div>
-  );
-}
-
 export default App;
