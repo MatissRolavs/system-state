@@ -1,7 +1,7 @@
 import{ useState } from "react";
-function Counter() {
+function Counter(props) {
 
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(props.result);
   const [change, setChange] = useState(1);
   
   function addOne() {
