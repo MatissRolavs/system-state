@@ -26,7 +26,9 @@ function App() {
       {resultsJSX}
       {namesJSX}
       {checkValuesJSX}
+      <pre>
       {labeledCheckValuesJSX}
+      </pre>
     </>
   )
   }

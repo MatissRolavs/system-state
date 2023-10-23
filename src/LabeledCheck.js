@@ -2,7 +2,7 @@ import{ useState } from "react";
 function LabeledCheck(props){
     const [checkBox, setCheckBox] = useState(props.checked);
     function handleCheckBox(event){
-        setCheckBox(event.target.value);
+        setCheckBox(event.target.checked);
     }
     return(
         
